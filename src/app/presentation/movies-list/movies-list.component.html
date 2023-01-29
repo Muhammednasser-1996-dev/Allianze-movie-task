@@ -1,0 +1,40 @@
+<div class="wrapper my-3 ">
+  <div class="container-fluid">
+    <app-screen-header (CreateHandler)="openCreateDialog()" [firstLetter]="'M'"
+      [title]="'OVIES LIST'"></app-screen-header>
+    <hr>
+    <p-tabView>
+      <p-tabPanel header="Upcoming Movies">
+        <div class="row">
+          <div class="col-md-3 col-sm-6" *ngFor="let movie of upcoming ">
+            <app-movies-card [movie]="movie"></app-movies-card>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Top Rated Movies">
+        <div class="row">
+          <div class="col-md-3 col-sm-6" *ngFor="let movie of topRated ">
+            <app-movies-card [movie]="movie"></app-movies-card>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Now Playing">
+        <div class="row">
+          <div class="col-md-3 col-sm-6" *ngFor="let movie of nowPlaying ">
+            <app-movies-card [movie]="movie"></app-movies-card>
+          </div>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>
+
+
+<p-dialog [style]="{ width: '30vw' }" [breakpoints]="{ '960px': '75vw', '640px': '97vw' }" [baseZIndex]="10000"
+  [modal]="true" [header]="'Add New Movie'" [(visible)]="displayCreateDialog" [draggable]="false" [closable]="false">
+
+  <app-movie-form (closeDialog)="close($event)" (addToLis)="addToLis($event)"></app-movie-form>
+
+</p-dialog>
+
+<p-toast></p-toast>

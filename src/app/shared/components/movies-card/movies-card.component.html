@@ -1,0 +1,27 @@
+<div class="card d-flex flex-column justify-content-between align-items-center my-2"
+  style="width: 18rem; height: 640px;">
+  <img [src]="movie.poster" class="card-img-top" alt="movie poster">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.title}}</h5>
+    <p class="card-text"> {{movie.overview}} </p>
+    <div class="d-flex align-items-baseline justify-content-between">
+      <p>{{movie.release_date}}</p>
+      <div class="votes">
+        <div>
+          <i class="fa-solid fa-quote-right text-primary fs-5 pe-2"></i>
+          <span>{{movie.vote_average}}</span>
+        </div>
+        <div>
+          <i class="fa-regular fa-eye text-primary fs-5 pe-2"></i>
+          <span>{{movie.vote_count}}</span>
+        </div>
+      </div>
+    </div>
+    <button  [loading]="isLoading" (click)="addToFavourites(movie)" pButton
+      [ngClass]="movie.isFafourite ? 'p-button-danger p-button-outlined ' : 'p-button-primary p-button-outlined'"
+      class="w-100 " type="button" [label]=" movie.isFafourite ? 'Remove From Favourites' : 'Add to Favourites'"
+      [icon]=" movie.isFafourite ? 'pi pi-heart-fill' :'pi pi-heart'" iconPos="left"></button>
+  </div>
+</div>
+
+<p-toast></p-toast>

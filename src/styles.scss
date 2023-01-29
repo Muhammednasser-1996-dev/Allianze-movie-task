@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ngx-toastr/toastr";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  font-family: "Montserrat", helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+:root {
+  --borderColor: #d5d8db;
+  --white: #fff;
+  --darkGray: #7d7f81;
+  --textColor: #9e9f9c;
+  --iconColor: #e85c72;
+  --black: #4e4e4e;
+  --btnColor: #e85c72;
+}

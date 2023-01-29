@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <app-screen-header [show]="false" [firstLetter]="'F'" [title]="'AVOURITE LIST'"></app-screen-header>
+   <hr>
+  <div class="row">
+    <div class="col-md-3 col-sm-6" *ngFor="let movie of _MoviesService.favourites">
+      <app-movies-card [movie]="movie"></app-movies-card>
+    </div>
+  </div>
+</div>
